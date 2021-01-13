@@ -12,13 +12,15 @@ import java.util.concurrent.CountDownLatch;
 public class Application {
 
     public static void main(String[] args) throws Exception {
-        ServiceConfig<GreetingsService> service = new ServiceConfig<GreetingsService>();
-        // 设置当前应用服务名称
-        service.setApplication(new ApplicationConfig("first-dubbo-provider"));
+        ApplicationConfig applicationConfig = new ApplicationConfig("first-dubbo-provider");
+
+        ServiceConfig<GreetingsService> service = new ServiceConfig<>();
+        service.setApplication(applicationConfig);
         // 设置注册中心地址
         service.setRegistry(new RegistryConfig("zookeeper://" + HostConf.zookeeperHost + ":" + HostConf.zookerperPort));
         service.setInterface(GreetingsService.class);
         service.setRef(new GreetingsServiceImpl());
+        // 显露及注册服务
         service.export();
 
         System.out.println("dubbo service started.");

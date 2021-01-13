@@ -7,8 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="dubbo-spring-consumer" />
         <module name="dubbo-sample-api" />
+        <module name="dubbo-spring-api" />
         <module name="dubbo-sample-provider" />
+        <module name="dubbo-spring-provider" />
         <module name="dubbo-sample-consumer" />
       </profile>
     </annotationProcessing>

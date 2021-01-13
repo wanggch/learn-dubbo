@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>dubbo-sample-provider</artifactId>
+    <artifactId>dubbo-spring-provider</artifactId>
 
     <properties>
         <dubbo.version>2.7.8</dubbo.version>
@@ -19,6 +19,11 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>4.3.10.RELEASE</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.dubbo</groupId>
             <artifactId>dubbo</artifactId>
@@ -32,8 +37,9 @@
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>dubbo-sample-api</artifactId>
+            <artifactId>dubbo-spring-api</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
